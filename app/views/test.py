@@ -7,6 +7,6 @@
 from app import route
 
 
-@route("/test", methods=['POST'])
+@route("/test", authentication=False, methods=['POST'])
 def test():
     return '888'
