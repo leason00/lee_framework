@@ -1,10 +1,8 @@
 # encoding: utf-8
 
 """
-@version: 1.0
-@author: dawning
-@contact: dawning7670@gmail.com
-@time: 2017/3/31 9:42
+@author: leason
+@time: 2017/11/14 9:54
 """
 import json as JSON
 from flask import request, make_response, g
@@ -88,7 +86,6 @@ def parse_path(path, prefix, api_version):
         parts = path_with_api.partition("/")
         api_version = parts[0]
         real_path = "/" + parts[2]
-        print real_path
         return api_version, real_path
     else:
         return "", "/" + path_with_api
