@@ -11,3 +11,4 @@ from app_request import schema_config as app_schema_request
 from lib.utils import package_import
 
 package_import("lib.schemas", excludes=["example_schema"])
+package_import("schemas", excludes=["example_schema"])
