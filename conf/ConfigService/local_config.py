@@ -118,10 +118,12 @@ R_SMS = {
 
 # redis前缀
 redis_pre = {
-    'token_pix': 't_pix_'
+    'token_pix': 't_pix_',
+    'access_pix': 'a_pix_'
 }
 
 # redis有效时间配置
 ex_time = {
-    'token_ex': 10*24*60*60
+    'token_ex': 10*24*60*60,
+    'access_ex': 1
 }
