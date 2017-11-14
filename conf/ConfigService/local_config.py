@@ -1,14 +1,13 @@
 # !/usr/bin/env python
 # encoding: utf-8
 """
-@author: WL
-@time: 2017/10/10 15:56
+@author: leason
+@time: 2017/11/14 14:12
 """
 """
 系统全局配置文件
 """
 db_type = {
-    "mongodb": "mongodb",
     "mysql": "mysql",
     "redis": "redis"
 }
@@ -21,12 +20,10 @@ web = {
     "port": 8082,
     "debug": True,
     "root": True,
-    "token_key": "youLuKeJi",
+    "token_key": "leeFrameWork",
     "key_len": 8,
     "pic_pix": "/static_file/",
-    "upload_path": "F:\\chargepile\\src\\branches\\1.0\src\\backend\\cl_admin\\static_file\\uploads",
-    "rule_redis_pix": "rule_pix_"
-
+    "upload_path": "F:\\github\\lee_framework\\static_file\\uploads"
 }
 
 mysql_pool_configs = {
@@ -50,7 +47,7 @@ redis_pool_configs = {
 
 # 日志配置
 log = {
-    "name": "myapp",
+    "name": "leeFrameWork",
     "level": "debug",
     "console": True,
     "format": "%(thread)d:%(asctime)s %(funcName)s:%(lineno)d %(filename)s - %(name)s %(levelname)s - %(message)s",
@@ -111,21 +108,15 @@ email = {
 # 注册短信验证码配置参数
 R_SMS = {
     # 秘钥ID
-    "ACCESS_KEY_ID": "LTAICHTV2KkBTnT3",
-    "ACCESS_KEY_SECRET": "fvrR7gcA4Nos7BQbx7rlXJeZt6p4E0",
-    "template_code": "SMS_99935005",
-    "sign_name": "中农润民",
+    "ACCESS_KEY_ID": "",
+    "ACCESS_KEY_SECRET": "",
+    "template_code": "",
+    "sign_name": "",
     "template_string": "num",
     "redis_timeout": 15*60
 }
 
-# redis 各模块存储前缀
-red_pre = {
-    'token_pix': 't_pix_'
-}
+# redis前缀
+redis_pre = {
 
-# redis有效时间配置
-ex_time = {
-    'captcha_ex': 2*60,
-    'token_ex': 10*24*60*60
 }
