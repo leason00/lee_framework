@@ -31,13 +31,6 @@ def authorization():
             return resp
 
 
-def path_check(path):
-    if path in login_list:
-        return True
-    else:
-        return False
-
-
 def login_status_check(account, request_token):
     redis_token = redis_server.get(redis_pre['token_pix'] + account)
     if not (redis_token == request_token):
