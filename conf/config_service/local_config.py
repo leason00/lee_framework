@@ -41,7 +41,7 @@ redis_pool_configs = {
         "pool_size": 5, # 0表示不使用连接池 最大连接数
         "user_name": "",
         "password": "",
-        "db_name": "ChargePileL"
+        "db_name": "leeFrameWork"
 }
 
 
@@ -118,12 +118,16 @@ R_SMS = {
 
 # redis前缀
 redis_pre = {
+    # token
     'token_pix': 't_pix_',
+    # 访问控制
     'access_pix': 'a_pix_'
 }
 
 # redis有效时间配置
 ex_time = {
+    # token
     'token_ex': 10*24*60*60,
+    # 访问控制
     'access_ex': 1
 }

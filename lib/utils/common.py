@@ -53,6 +53,7 @@ def build_ret(success, msg="", total=0, code=0, data=None):
     """
     if data is None:
         data = []
+
     def tran_code(flag):
         if flag:
             return 0
@@ -71,30 +72,23 @@ def build_ret(success, msg="", total=0, code=0, data=None):
     return json.dumps(dic, ensure_ascii=False)
 
 
-def get_ret(error, total=0, msg=None, data=None):
+def get_ret(error, msg=None):
     """
-    生成请求响应json
-    :param total: type(int) 数据总数(用于分页)
-    :param data: type(list) 数据
+    生成错误响应json
     :param error: type(error) 错误类
     :param msg: type(str) 额外信息
     :return: format of json is:
     {
       "code": 0,
-      "data": []
-      "total": 0,
+      "err_code": 0,
       "msg": ""
     }
     """
-    if data is None:
-        data = []
     if msg is None:
         msg = error.msg
     dic = {
         "code": error.code,
         "msg": msg,
-        "total": total,
-        "data": data,
         "err_code": error.err_code
     }
     return json.dumps(dic, ensure_ascii=False)

@@ -5,15 +5,13 @@
 @time: 2017/11/14 9:54
 """
 import json as JSON
-from flask import request, make_response, g
+from flask import request
 from lib.exception.validator import JSONValidateError
 from lib.flask import app
 from lib.schemas import app_schema_request
 from lib.utils import logging
 from lib.validator import JValidator
 from conf import web
-from lib.utils.common import  build_ret
-from lib.decorators import route
 
 
 validator = JValidator(app_schema_request)

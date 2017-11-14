@@ -6,6 +6,6 @@
 """
 ENVIRONMENT = False
 if ENVIRONMENT:
-    from ConfigService.online_config import *
+    from config_service.online_config import *
 else:
-    from ConfigService.local_config import *
+    from config_service.local_config import *
