@@ -36,3 +36,6 @@ A_SIGNED = ERROR(4008, u"账号已在其他地方登录")
 A_TIMEOUT = ERROR(4008, u"登录失效")
 A_NO_AUTHOR = ERROR(4009, u"无权限")
 
+# 登录
+LOGIN_SUCCESS = ERROR(0, u"登录成功")
+LOGOUT_SUCCESS = ERROR(0, u"注销成功")
