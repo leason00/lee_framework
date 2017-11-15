@@ -12,6 +12,11 @@ db_type = {
     "redis": "redis"
 }
 
+# 一些开关
+switch = {
+    # "create_table": True
+    "create_table": False
+}
 # web
 web = {
     "url_pre": "/api/test",
@@ -27,7 +32,7 @@ web = {
 }
 
 mysql_pool_configs = {
-    "url": "mysql+pymysql://root:qwe1234567@10.10.51.30:3306/ChargePileL?charset=utf8mb4",
+    "url": "mysql+pymysql://root:qwe1234567@10.10.51.30:3306/leason_test?charset=utf8mb4",
     "pool_size": 1,
     "max_overflow": 10,
     "pool_recycle": 2*60*60

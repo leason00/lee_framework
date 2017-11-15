@@ -10,12 +10,11 @@ from conf import web, ex_time
 from db import redis_conn as redis_service
 
 
-def en_token(username, id):
+def en_token(username):
     iat = time.time()
     exp = iat + ex_time['token_ex']
     payload = {
         'username': str(username),
-        'id': str(id),
         'iat': iat,
         'exp': exp
     }

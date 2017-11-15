@@ -72,7 +72,27 @@ def build_ret(success, msg="", total=0, code=0, data=None):
     return json.dumps(dic, ensure_ascii=False)
 
 
-def get_ret(error, msg=None):
+def success_ret(success, msg=None):
+    """
+    生成一般响应json
+    :param success: type(success) 成功类
+    :param msg: type(str) 额外信息
+    :return: format of json is:
+    {
+      "code": 0,
+      "msg": ""
+    }
+    """
+    if msg is None:
+        msg = success.msg
+    dic = {
+        "code": success.code,
+        "msg": msg
+    }
+    return json.dumps(dic, ensure_ascii=False)
+
+
+def err_ret(error, msg=None):
     """
     生成错误响应json
     :param error: type(error) 错误类

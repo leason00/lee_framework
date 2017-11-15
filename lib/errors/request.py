@@ -10,7 +10,7 @@ import traceback
 from conf import web
 from lib.exception.validator import JSONValidateError
 from lib.flask import app
-from lib.utils import build_ret, get_ret
+from lib.utils import build_ret, err_ret
 from lib.utils import logging
 from msg import msg
 
@@ -23,7 +23,7 @@ MSG = FAIL(1, "操作失败", err_id)
 @app.errorhandler(JSONValidateError)
 def json_validate_error(e):
     MSG.msg = str(e)
-    response = get_ret(MSG)
+    response = err_ret(MSG)
     logging.error("err_id:{}{}".format(err_id,traceback.format_exc()))
     return response
 
@@ -31,9 +31,9 @@ def json_validate_error(e):
 @app.errorhandler(Exception)
 def internal_error(e):
     if web['debug']:
-        response = get_ret(MSG)
+        response = err_ret(MSG)
     else:
-        response = get_ret(MSG)
+        response = err_ret(MSG)
     logging.error("err_id:{}{}".format(err_id, traceback.format_exc()))
     return response
 

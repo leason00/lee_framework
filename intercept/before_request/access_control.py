@@ -9,7 +9,7 @@ from lib.flask import app
 from db import redis_conn as redis_server
 from msg import msg
 from conf import redis_pre, ex_time
-from lib.utils.common import get_ret
+from lib.utils.common import err_ret
 
 
 # 访问速度控制
@@ -21,7 +21,7 @@ def before_request():
         ip = "127.0.0.1"
     result = redis_server.get(redis_pre['access_pix'] + ip)
     if result:
-        return make_response(get_ret(msg.A_MAX_REQUEST))
+        return make_response(err_ret(msg.A_MAX_REQUEST))
     else:
         redis_server.set(redis_pre['access_pix'] + ip, value=redis_pre['access_pix'] + ip, ex=ex_time['access_ex'])
 

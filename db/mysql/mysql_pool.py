@@ -4,10 +4,11 @@
 @author: leason
 @time: 2017/11/14 14:35
 """
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, exc
 from sqlalchemy.pool import QueuePool
-from lib.utils import logging
-from conf import mysql_pool_configs
+from lib.utils import logging, package_import
+from conf import mysql_pool_configs, switch
 
 
 def engine():
@@ -23,3 +24,10 @@ def engine():
         logging.debug("create pool err:", e)
     return db_pool
 mysql_engine = engine()
+ModelBase = declarative_base()
+
+if switch['create_table']:
+    package_import("app.models")
+
+    ModelBase.metadata.create_all(bind=mysql_engine)
+

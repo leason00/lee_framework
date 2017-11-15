@@ -8,4 +8,4 @@
 """
 from file import package_import, get_ini_dict, get_file_path
 from log import logging
-from common import md5, build_ret, generate_password, get_ret
+from common import md5, build_ret, generate_password, err_ret

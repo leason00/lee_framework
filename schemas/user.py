@@ -8,7 +8,7 @@
 from lib.schemas import app_schema_request
 
 
-app_schema_request['/test'] = {
-    'name': {'type': 'string'},
-    'enable': {'type': 'string', 'enum': ['0', '1']}
+app_schema_request['/user/login'] = {
+    'username': {'type': 'string'},
+    'password': {'type': 'string'}
 }

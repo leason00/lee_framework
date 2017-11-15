@@ -11,7 +11,7 @@ from lib.decorators.before_route import login_list
 from db import redis_conn as redis_server
 from msg import msg
 from conf import redis_pre
-from lib.utils.common import get_ret
+from lib.utils.common import err_ret
 from app.utils.opreate_token import de_token
 
 
@@ -34,12 +34,12 @@ def authorization():
 def login_status_check(account, request_token):
     redis_token = redis_server.get(redis_pre['token_pix'] + account)
     if not (redis_token == request_token):
-        return False, make_response(get_ret(msg.A_SIGNED))
+        return False, make_response(err_ret(msg.A_SIGNED))
     return True, True
 
 
 def token_check(request_token):
     account_info = de_token(request_token)
     if not account_info:
-        return False, make_response(get_ret(msg.A_TIMEOUT))
+        return False, make_response(err_ret(msg.A_TIMEOUT))
     return True, account_info
