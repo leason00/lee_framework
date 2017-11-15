@@ -20,6 +20,15 @@ def get_params():
     return params
 
 
+# 获取请求参数
+def get_user_info():
+    """
+    获取用户信息
+    :return: dict
+    """
+    return g.user_info
+
+
 # 获取数据库session装饰器
 def get_session(func):
     """
