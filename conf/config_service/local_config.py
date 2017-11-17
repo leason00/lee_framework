@@ -28,7 +28,7 @@ web = {
     "token_key": "leeFrameWork",
     "key_len": 8,
     "pic_pix": "/static_file/",
-    "upload_path": "F:\\github\\lee_framework\\static_file\\uploads"
+    "upload_path": "F:\\github\\lee_framework\\static_files\\uploads"
 }
 
 mysql_pool_configs = {
